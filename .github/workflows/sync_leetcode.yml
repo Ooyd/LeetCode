@@ -20,4 +20,4 @@ jobs:
           destination-github-username: 'Ooyd'
           destination-repository-name: 'algorithm-and-data-structure'
           target-branch: main
-          target-directory: 'leetcode' # 대상 디렉토리
+          target-directory: 'LeetCode' # 대상 디렉토리
