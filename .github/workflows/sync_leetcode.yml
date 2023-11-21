@@ -18,6 +18,6 @@ jobs:
         with:
           source-directory: 'LeetCode' # 원본 리포지토리의 LeetCode 폴더 로컬 경로
           destination-github-username: 'Ooyd'
-          destination-repository-name: 'algorithm-datastructure'
+          destination-repository-name: 'algorithm-and-data-structure'
           target-branch: main
-          target-directory: 'leetcode' # 대상 리
+          target-directory: 'leetcode' # 대상 디렉토리
