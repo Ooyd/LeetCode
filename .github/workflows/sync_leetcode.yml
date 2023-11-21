@@ -16,8 +16,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
-          source-directory: 'leetcode' # 원본 리포지토리의 LeetCode 폴더 경로
-          destination-github-username: YOUR_USERNAME
+          source-directory: 'LeetCode' # 원본 리포지토리의 LeetCode 폴더 로컬 경로
+          destination-github-username: 'Ooyd'
           destination-repository-name: 'algorithm-datastructure'
           target-branch: main
-          target-directory: 'leetcode' # 대상 리포지토리의 경로
+          target-directory: 'leetcode' # 대상 리
