@@ -5,6 +5,18 @@ on:
     branches: [ main ]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: 'your-username/your-repository'
+
+    - name: List directory contents
+      run: ls -la
+
+    - name: Print working directory
+      run: pwd
   sync:
     runs-on: ubuntu-latest
     steps:
