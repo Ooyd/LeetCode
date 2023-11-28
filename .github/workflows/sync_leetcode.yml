@@ -24,6 +24,7 @@ jobs:
         git config --global user.email "qk1413@naver.com"
         git config --global user.name "june0929"
         git clone https://github.com/Ooyd/algorithm-and-data-structure.git
+        mkdir -p algorithm-and-data-structure/LeetCode
         cp -R LeetCode/* algorithm-and-data-structure/LeetCode/
         cd algorithm-and-data-structure
         git add .
