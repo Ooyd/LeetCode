@@ -1,34 +1,22 @@
-name: Sync Repositories
+name: Sync LeetCode Solutions
 
 on:
   push:
-    branches: [ main ]
-
+	@@ -7,17 +7,27 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout LeetCode Repository
-      uses: actions/checkout@v2
-      with:
-        repository: 'Ooyd/LeetCode'
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Get Last Commit Message
-      id: commit-message
-      run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
-
-    - name: Sync Files to algorithm-and-data-structure Repository
-      run: |
-        git config --global user.email "qk1413@naver.com"
-        git config --global user.name "june0929"
-        git clone https://github.com/Ooyd/algorithm-and-data-structure.git
-        mkdir -p algorithm-and-data-structure/LeetCode
-        cp -R LeetCode/* algorithm-and-data-structure/LeetCode/
-        cd algorithm-and-data-structure
-        git add .
-        git commit -m "${{ steps.commit-message.outputs.message }}"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - name: Sync to algorithm-datastructure repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        with:
+          source-directory: 'LeetCode' # 원본 리포지토리의 LeetCode 폴더 로컬 경로
+          destination-github-username: 'Ooyd'
+          destination-repository-name: 'algorithm-and-data-structure'
+          target-branch: main
+          target-directory: 'LeetCode' # 대상 디렉토리
