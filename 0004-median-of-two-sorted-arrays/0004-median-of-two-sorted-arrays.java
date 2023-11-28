@@ -42,9 +42,5 @@ class Solution {
         int[] nums1 = {1, 2, 3, 4, 5};
         int[] nums2 = {1, 2, 3, 4, 5, 6, 7, 8};
         System.out.println(solution.findMedianSortedArrays(nums1, nums2));
-
-        // int[] nums1 = {1, 2};
-        // int[] nums2 = {3, 4};
-        // System.out.println(solution.findMedianSortedArrays(nums1, nums2));
     }
 }
