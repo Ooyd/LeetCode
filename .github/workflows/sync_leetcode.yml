@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: 'your-username/your-repository'
+        repository: 'Ooyd/algorithm-and-data-structure'
 
     - name: List directory contents
       run: ls -la
