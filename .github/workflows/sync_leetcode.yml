@@ -2,7 +2,8 @@ name: Sync LeetCode Solutions
 
 on:
   push:
-	@@ -7,17 +7,27 @@ on:
+    branches: [ main ]
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -15,8 +16,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
-          source-directory: 'LeetCode' # 원본 리포지토리의 LeetCode 폴더 로컬 경로
+          source-directory: 'LeetCode' # 원본 리포지토리의 LeetCode 폴더 경로
           destination-github-username: 'Ooyd'
-          destination-repository-name: 'algorithm-and-data-structure'
+          destination-repository-name: 'algorithm-and-data-structur'
           target-branch: main
-          target-directory: 'LeetCode' # 대상 디렉토리
+          target-directory: 'LeetCode' # 대상 리포지토리의 경로
